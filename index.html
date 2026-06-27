@@ -71,7 +71,7 @@ button{
         gap:12px;
     }
 }
-
+*/
 #header,
 #footer{
     max-width:1100px;
@@ -85,7 +85,7 @@ button{
     color:#666;
     text-align:center;
 }
-
+/*
 #lightbox{
 	display:none;
 	position:fixed;
@@ -112,7 +112,7 @@ button{
 </style>
 </head>
 <body>
-	<!--	<div id="header"></div>	-->
+	<div id="header"></div>
 	<h1 id="title">Photo Gallery</h1>
 	<div id="albums"></div>
 	<div id="albumView" style="display:none">
@@ -120,7 +120,7 @@ button{
 		<h2 id="albumName"></h2>
 		<div id="photos"></div>
 	</div>
-	<!--	<div id="footer"></div>	-->
+	<div id="footer"></div>
 	<!-- <div id="lightbox">
 		<img id="lightboxImg">
 	</div> -->
@@ -145,7 +145,7 @@ button{
 				};
 			}
 		}
-		/* async function loadConfig(){
+		async function loadConfig(){
 			const res = await api("config");
 			if(!res.success) return;
 			const cfg = res.data;
@@ -159,7 +159,7 @@ button{
 			if(cfg.Footer){
 				document.getElementById("footer").textContent = cfg.Footer;
 			}
-		} */
+		}
 		async function loadAlbums(){
 		    document.getElementById("albumView").style.display="none";
 		    document.getElementById("albums").style.display = "grid";
@@ -206,7 +206,7 @@ button{
 		lightbox.onclick=function(){
 			lightbox.classList.remove("show");
 		} */
-		/* loadConfig(); */
+		loadConfig();
 		loadAlbums();
 	</script>
 </body>
