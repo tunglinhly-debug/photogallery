@@ -10,74 +10,56 @@ body{
     padding:20px;
     background:#f4f4f4;
 }
-
-h1,h2{
+h1, h2{
     margin:15px 0;
 }
-
 button{
     padding:8px 16px;
     cursor:pointer;
 }
-
-#albums,
-#photos{
+#albums, #photos{
     display:grid;
     grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
     gap:20px;
 }
-
-.album,
-.photo{
+.album, .photo{
     background:#fff;
     border-radius:8px;
     overflow:hidden;
     box-shadow:0 2px 8px rgba(0,0,0,.12);
     transition:.2s;
 }
-
-.album:hover,
-.photo:hover{
+.album:hover, .photo:hover{
     transform:translateY(-4px);
 }
-
-.album img,
-.photo img{
+.album img, .photo img{
     width:100%;
     aspect-ratio:1/1;
     object-fit:cover;
     display:block;
 }
-
-.album h3,
-.photo div{
+.album h3, .photo div{
     padding:10px;
     margin:0;
 }
-
 .album p{
     margin:0;
     padding:0 10px 12px;
     color:#666;
 }
-
 @media(max-width:768px){
     body{
         padding:10px;
     }
-    #albums,
-    #photos{
+    #albums, #photos{
         grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
         gap:12px;
     }
 }
-
-#header,
-#footer{
+#header, #footer{
     max-width:1100px;
     margin:20px auto;
 }
-
 #footer{
     margin-top:40px;
     padding-top:20px;
@@ -85,30 +67,6 @@ button{
     color:#666;
     text-align:center;
 }
-/*
-#lightbox{
-	display:none;
-	position:fixed;
-	left:0;
-	top:0;
-	right:0;
-	bottom:0;
-	background:rgba(0,0,0,.92);
-	justify-content:center;
-	align-items:center;
-	z-index:9999;
-	cursor:pointer;
-}
-
-#lightbox img{
-	max-width:95%;
-	max-height:95%;
-}
-
-#lightbox.show{
-	display:flex;
-}
-*/
 </style>
 </head>
 <body>
@@ -121,9 +79,6 @@ button{
 		<div id="photos"></div>
 	</div>
 	<div id="footer"></div>
-	<!-- <div id="lightbox">
-		<img id="lightboxImg">
-	</div> -->
 	<script>
 		const API="https://script.google.com/macros/s/AKfycbzXP-aPMq8D45ESV8MwnjKgWjwBpXXeN1uBo9C1KX7_-v57E3LUJmE8QiWYfd6pJCG8IA/exec";
 		async function api(action,id=""){
@@ -197,15 +152,6 @@ button{
 		        `;
 		    });
 		}
-		/* const lightbox=document.getElementById("lightbox");
-		const lightboxImg=document.getElementById("lightboxImg");
-		function showImage(url){
-			lightboxImg.src=url;
-			lightbox.classList.add("show");
-		}
-		lightbox.onclick=function(){
-			lightbox.classList.remove("show");
-		} */
 		loadConfig();
 		loadAlbums();
 	</script>
