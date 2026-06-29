@@ -27,10 +27,10 @@ button{
     border-radius:8px;
     overflow:hidden;
     box-shadow:0 2px 8px rgba(0,0,0,.12);
-    transition:.1s;
+    transition:.2s;
 }
 .album:hover, .photo:hover{
-    transform:translateY(-5px);
+    transform:translateY(-4px);
 }
 .album img, .photo img{
     width:100%;
@@ -61,9 +61,8 @@ button{
 </style>
 </head>
 <body>
-	
+	<div id="title">Photo Gallery</div>
 	<div id="header"></div>
-	<h1 id="title">Photo Gallery</h1>
 	<div id="albums"></div>
 	<div id="albumView" style="display:none">
 		<button onclick="loadAlbums()">Go back home</button>
@@ -96,12 +95,12 @@ button{
 			const res = await api("config");
 			if(!res.success) return;
 			const cfg = res.data;
-			if(cfg.Header){
-				document.getElementById("header").innerHTML = `<img src="${cfg.Header}" style="width:15%;height:15%;display:block;">`;
-			}
 			if(cfg.SiteTitle){
 				document.title = cfg.SiteTitle;
 				document.getElementById("title").innerText = cfg.SiteTitle;
+			}
+			if(cfg.Header){
+				document.getElementById("header").innerHTML = `<img src="${cfg.Header}" style="width:120px;height:150px;display:block;">`;
 			}
 			if(cfg.Footer){
 				document.getElementById("footer").textContent = cfg.Footer;
