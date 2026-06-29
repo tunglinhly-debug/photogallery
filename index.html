@@ -96,12 +96,12 @@ button{
 			const res = await api("config");
 			if(!res.success) return;
 			const cfg = res.data;
+			if(cfg.Header){
+				document.getElementById("header").innerHTML = `<img src="${cfg.Header}" style="width:15%;height:15%;display:block;">`;
+			}
 			if(cfg.SiteTitle){
 				document.title = cfg.SiteTitle;
-				document.getElementById("title").innerText = `<img src="${cfg.Header}" style="width:15%;height:15%;display:block;">`;
-			}
-			if(cfg.Header){
-				document.getElementById("header").innerHTML = cfg.SiteTitle;
+				document.getElementById("title").innerText = cfg.SiteTitle;
 			}
 			if(cfg.Footer){
 				document.getElementById("footer").textContent = cfg.Footer;
