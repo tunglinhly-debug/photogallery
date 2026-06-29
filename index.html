@@ -19,7 +19,7 @@ button{
 }
 #albums, #photos{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
     gap:20px;
 }
 .album, .photo{
@@ -46,15 +46,6 @@ button{
     margin:0;
     padding:0 10px 12px;
     color:#666;
-}
-@media(max-width:768px){
-    body{
-        padding:10px;
-    }
-    #albums, #photos{
-        grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
-        gap:12px;
-    }
 }
 #header, #footer{
     max-width:1100px;
